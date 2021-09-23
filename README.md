@@ -24,6 +24,24 @@
 |配置统一化|
 |闪屏页广告资源下载|
 
+## 目录结构
+```
+.
+├── README.md // 说明文档
+├── setting.gradle //模块配置
+└── app //app主干
+└── camera //拍照相关
+└── core //基础功能
+└── imagepicker //图片选择
+└── player //播放器组件
+└── push //推送功能
+└── tuikit //IM功能
+└── versionPlugin //includePlugin依赖管理
+     ├── src
+          ├── main.java.com.ymy.plugin
+                ├── BuildConfig.kt 具体App配置，包括包名，版本，三方库配置等
+```
+
 ## 简介
 
 使用H5页面搭建一个基础应用，包含于基础功能的js交互功能 支持功能
