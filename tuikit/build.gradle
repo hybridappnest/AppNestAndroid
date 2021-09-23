@@ -1,0 +1,71 @@
+import com.ymy.plugin.*
+
+plugins {
+    // 这个 id 就是在 versionPlugin 文件夹下 build.gradle 文件内定义的 id
+    id "com.ymy.plugin"
+    id 'com.android.library'
+    id 'kotlin-android'
+    id "kotlin-kapt"
+    id "android-aspectjx"
+}
+
+android {
+    buildFeatures{
+        viewBinding = true
+    }
+
+    compileSdkVersion BuildConfig.compileSdk
+    buildToolsVersion BuildConfig.buildTools
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdk
+        targetSdkVersion BuildConfig.targetSdk
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['assets']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs','../tuikit/libs'
+        }
+        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public" }
+    }
+}
+
+dependencies {
+    api project(path: ':core')
+    api project(path: ':imagepicker')
+    api project(path: ':player')
+    api project(path: ':camera')
+    //indicator，头部指示器控件
+    implementation Third.MagicIndicator
+    implementation AndroidX.androidxlegacy
+    implementation AndroidX.constraintlayout
+    implementation AndroidX.recyclerView
+    implementation AndroidX.androidxannotation
+
+    implementation 'it.sephiroth.android.library.imagezoom:library:1.0.4'
+    implementation 'com.wang.avi:library:2.1.3'
+    implementation 'com.google.android:flexbox:1.0.0'
+
+    api 'com.tencent.imsdk:imsdk-plus:5.5.892'
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+}
+

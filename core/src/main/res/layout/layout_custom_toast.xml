@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black30tan"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_custom_toast"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/icon_custom_toast_success" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="39dp"
+            android:background="@drawable/icon_custom_toast_line"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_toast_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/blue1DEBFF"
+                android:textSize="18sp"
+                tools:text="保存成功保存成功保存成功保存成功保存成功保存成功保存成功保存成功保存成功保存成功" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

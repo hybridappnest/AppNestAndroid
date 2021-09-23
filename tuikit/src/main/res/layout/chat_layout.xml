@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chat_background_color">
+
+    <com.tencent.qcloud.tim.uikit.component.TitleBarLayout
+        android:id="@+id/chat_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.tencent.qcloud.tim.uikit.modules.chat.layout.message.MessageLayout
+        android:id="@+id/chat_message_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chat_bottom_layout"
+        android:layout_below="@+id/chat_notice_layout_root"
+        android:baselineAligned="false"
+        android:overScrollMode="never"
+        android:background="@color/chatbackground"
+        android:clickable="false"
+        android:descendantFocusability="blocksDescendants" />
+
+    <FrameLayout
+        android:id="@+id/chat_notice_layout_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_title_bar">
+
+        <com.tencent.qcloud.tim.uikit.component.NoticeLayout
+            android:id="@+id/chat_group_apply_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <com.tencent.qcloud.tim.uikit.component.NoticeLayout
+            android:id="@+id/chat_notice_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:visibility="gone" />
+
+        <com.tencent.qcloud.tim.uikit.component.NoticeEventLayout
+            android:id="@+id/chat_notice_layout_alarm"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content" />
+
+        <com.tencent.qcloud.tim.uikit.component.NoticeV2Layout
+            android:id="@+id/chat_notice_layout_yjya"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+    <RelativeLayout
+        android:id="@+id/chat_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/jiaojie_layout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_height="50dp">
+            <TextView
+                android:id="@+id/selectNum"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="已选择0条记录"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:textColor="#888"
+                android:textSize="12dp" />
+            <LinearLayout
+                android:id="@+id/next_layout"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="15dp"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:text="下一步"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:textSize="13dp"
+                    android:background="@drawable/selector_login_btn_bg"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/more_select"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:layout_height="80dp">
+            <LinearLayout
+                android:id="@+id/im_shareLayout"
+                android:orientation="vertical"
+                android:layout_width="110dp"
+                android:gravity="center"
+                android:layout_height="80dp">
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/im_share_icon"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/im_delLayout"
+                android:orientation="vertical"
+                android:layout_width="110dp"
+                android:gravity="center"
+                android:layout_height="80dp">
+                <TextView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/im_del_icon"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <com.tencent.qcloud.tim.uikit.modules.chat.layout.input.InputLayout
+            android:id="@+id/chat_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/voice_recording_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_volume_dialog_bg"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/recording_icon"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:id="@+id/recording_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

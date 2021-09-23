@@ -1,0 +1,35 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ymy.image">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application>
+
+        <!--图片列表Activity-->
+        <!--        <activity-->
+        <!--            android:name="com.lcw.library.imagepicker.activity.ImagePickerActivity"-->
+        <!--            android:screenOrientation="portrait" />-->
+        <!--图片列表Activity-->
+        <activity
+            android:name="com.ymy.image.imagepicker.activity.ImagePickerActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Android 7.0 文件共享配置，必须配置 -->
+        <provider
+            android:name="com.lcw.library.imagepicker.provider.ImagePickerProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/image_picker" />
+        </provider>
+        <activity
+            android:name="net.mikaelzero.mojito.ui.ImageMojitoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/Transparent" />
+    </application>
+
+</manifest>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pic">图片</string>
+    <string name="pics">相册</string>
+    <string name="photo">拍照</string>
+    <string name="video">摄像</string>
+    <string name="file">文件</string>
+
+    <string name="cancel">取消</string>
+    <string name="sure">确定</string>
+
+    <string name="un_download">未下载</string>
+    <string name="downloaded">已下载</string>
+    <string name="downloading">下载中...</string>
+    <string name="sending">发送中...</string>
+    <string name="sended">已发送</string>
+    <string name="has_read">已读</string>
+    <string name="unread">未读</string>
+    <string name="typing">正在输入...</string>
+
+    <string name="chat_to_top">置顶聊天</string>
+    <string name="send">发送</string>
+
+    <string name="group_id">群ID</string>
+    <string name="group_name">群名称</string>
+    <string name="group_icon">修改群头像</string>
+    <string name="group_notice">群公告</string>
+    <string name="group_members">群成员</string>
+    <string name="group_type">群类型</string>
+    <string name="add_group_member">添加成员</string>
+    <string name="remove_group_member">移除成员</string>
+    <string name="join_group_type">加群方式</string>
+    <string name="in_group_nick_name">我的群昵称</string>
+    <string name="dissolve">删除并退出群</string>
+    <string name="modify_group_name">修改群名称</string>
+    <string name="modify_group_notice">修改群公告</string>
+    <string name="modify_nick_name_in_goup">修改我的群昵称</string>
+
+    <string name="group_detail">群信息</string>
+    <string name="accept">同意</string>
+    <string name="refuse">拒绝</string>
+    <string name="group_apply_members">群申请</string>
+    <string name="accepted">已同意</string>
+    <string name="refused">已拒绝</string>
+    <string name="group_apply_tips">%1$d 条入群申请</string>
+    <string name="group_apply_click_handle">点击处理</string>
+    <string name="group_remove_member">移出群聊</string>
+    <string name="group_join_type">加群方式</string>
+    <string name="modify_group_name_success">修改群名称成功</string>
+    <string name="modify_group_notice_success">修改群公告成功</string>
+    <string name="exit_group">删除并退出群</string>
+    <string name="modify_nickname_success">修改昵称成功</string>
+    <string name="view_original_image">查看原图</string>
+
+    <!-- 联系人相关 -->
+    <string name="new_friend">新的联系人</string>
+    <string name="group">我的群聊</string>
+    <string name="blacklist">黑名单</string>
+    <string name="contact_count">%d位联系人</string>
+    <string name="contact_title">通讯录</string>
+    <string name="conversation_title">腾讯·云通信</string>
+
+    <!-- 好友资料 -->
+    <string name="profile_detail">详细资料</string>
+    <string name="profile_id">帐号</string>
+    <string name="profile_add_wording">验证消息</string>
+    <string name="profile_remark">设置备注</string>
+    <string name="profile_black">加入黑名单</string>
+    <string name="profile_remark_edit">修改备注</string>
+    <string name="profile_chat">发送消息</string>
+    <string name="profile_del">删除好友</string>
+
+    <string name="search_call_hint">输入群成员名称</string>
+    <string name="video_call">直播</string>
+    <string name="audio_call">语音通话</string>
+    // 云通信
+    <string name="chat_top">置顶聊天</string>
+    <string name="chat_delete">删除聊天</string>
+    <string name="quit_chat_top">取消置顶</string>
+
+    // 登录相关
+    <string name="account">用户名</string>
+    <string name="password">密码</string>
+
+    // "我"相关
+    <string name="profile">我</string>
+    <string name="id">账号：%1$s</string>
+    <string name="modify_user_icon">修改头像</string>
+    <string name="modify_nick_name">修改昵称</string>
+    <string name="modify_signature">修改个性签名</string>
+    <string name="add_rule">加我为好友时</string>
+    <string name="allow_type_allow_any">允许任何人</string>
+    <string name="allow_type_deny_any">拒绝任何人</string>
+    <string name="allow_type_need_confirm">需要验证</string>
+    <string name="exit">退出登录</string>
+    <string name="about_im">关于即时通信IM</string>
+
+    // 主页Tab相关
+    <string name="tab_contact_tab_text">通讯录</string>
+    <string name="tab_conversation_tab_text">消息</string>
+    <string name="tab_profile_tab_text">我</string>
+
+    // "+"menu相关
+    <string name="add_friend">添加好友</string>
+    <string name="add_group">添加群聊</string>
+    <string name="start_conversation">通讯录\u3000</string>
+    <string name="start_scan">扫一扫\u3000</string>
+    <string name="create_group_chat">发起群聊</string>
+    <string name="create_chat_room">创建聊天室</string>
+    <string name="create_private_group">创建讨论组</string>
+    <string name="hint_add_user_id">请输入ID</string>
+    <string name="hint_add_wording">请输入验证消息</string>
+    <string name="contact_add">添加</string>
+    <string name="user_id">对方ID</string>
+    <string name="add_wording">验证消息</string>
+
+    // 群信息相关
+    <string name="tips_empty_group_member">请选择群成员</string>
+    <string name="tips_empty_group_type">请选择加群方式</string>
+    <string name="no_friend_apply">暂无好友申请</string>
+
+
+    // 新朋友
+    <string name="request_agree">同意</string>
+    <string name="request_accepted">已接受</string>
+    <string name="request_waiting">等待验证</string>
+
+    <string name="test_custom_action">自定义消息</string>
+    <string name="test_custom_action_alarm_to_workorder">转工单</string>
+    <string name="test_custom_action_alarm_send_action">处理</string>
+    <string name="test_custom_action_alarm_desc">详情</string>
+    <string name="test_custom_action_alarm_timeline">时间轴</string>
+    <string name="test_custom_action_alarm_history">历史记录</string>
+    <string name="test_custom_action_alarm_moveingline">移动轨迹</string>
+    <string name="test_custom_action_alarm_jiaojie">发起交接</string>
+    <string name="test_custom_action_yayl_finish">结束演练</string>
+    <string name="test_custom_action_alarm_yanlian">转预案演练</string>
+    <string name="test_custom_message">查看详情>></string>
+    <string name="test_custom_emoji">表情</string>
+
+    <string name="privacy_text">已同意《<a href="http://privacy.qq.com/">隐私政策</a>》</string>
+
+    <string name="video_not_wifi">非wifi下加载视频，会消耗大量流量，是否继续？</string>
+    <string name="video_play_continue">继续观看</string>
+    <string name="video_play_cancle">取消观看</string>
+</resources>

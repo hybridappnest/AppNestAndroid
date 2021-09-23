@@ -1,0 +1,103 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tencent.qcloud.tim.uikit">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application>
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="812" />
+        <activity
+            android:name=".component.photoview.PhotoViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.group.info.GroupInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".component.SelectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.group.apply.GroupApplyManagerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".modules.group.apply.GroupApplyMemberActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+
+        <activity
+            android:name="com.tencent.liteav.SelectContactActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.tencent.liteav.trtcvideocalldemo.ui.TRTCVideoCallActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <provider
+            android:name=".utils.TUIKitFileProvider"
+            android:authorities="${applicationId}.uikit.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths_public"/>
+        </provider>
+        <activity android:name="com.ymy.activity.SelectSessionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ymy.activity.MaxViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ymy.ijk.VideoDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ymy.ijk.AliVideoDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ymy.activity.AddMoreActivity"></activity>
+        <activity android:name="com.ymy.activity.StartC2CChatActivity"></activity>
+        <activity android:name="com.ymy.activity.StartGroupChatActivity"></activity>
+        <activity android:name="com.ymy.activity.BlackListActivity"></activity>
+        <activity android:name="com.ymy.activity.NewFriendActivity"></activity>
+        <activity android:name="com.ymy.activity.FriendProfileActivity"></activity>
+        <activity android:name="com.ymy.activity.GroupListActivity"></activity>
+        <activity android:name="com.ymy.activity.SearchGroupNameActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.ymy.activity.ImChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+
+            <!-- 华为离线推送打开应用内页面 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <data
+                    android:host="com.tencent.qcloud"
+                    android:path="/detail"
+                    android:scheme="pushscheme" />
+            </intent-filter>
+
+            <!-- OPPO离线推送的intent action方式必须配置category且不能有data数据 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- OPPO离线推送的scheme url方式必须配置action和category -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data
+                    android:scheme="pushscheme"
+                    android:host="com.tencent.qcloud"/>
+            </intent-filter>
+
+        </activity>
+        <activity android:name="com.ymy.activity.GroupMemberListActivity" android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>

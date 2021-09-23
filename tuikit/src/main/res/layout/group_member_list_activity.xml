@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.tencent.qcloud.tim.uikit.component.TitleBarLayout
+        android:id="@+id/black_list_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/page_title_height" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:divider="#80E5E5E5"
+        android:layout_width="match_parent"
+        android:dividerHeight="0.8dp"
+        android:listSelector="@color/transparent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

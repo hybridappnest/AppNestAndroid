@@ -1,0 +1,49 @@
+import com.ymy.plugin.*
+
+plugins {
+    // 这个 id 就是在 versionPlugin 文件夹下 build.gradle 文件内定义的 id
+    id "com.ymy.plugin"
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    compileSdkVersion BuildConfig.compileSdk
+    buildToolsVersion BuildConfig.buildTools
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdk
+        targetSdkVersion BuildConfig.targetSdk
+
+        consumerProguardFiles "consumer-rules.pro"
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(path: ':core')
+
+    implementation 'com.aliyun.sdk.android:AliyunPlayer:5.4.1-full'
+    implementation 'com.alivc.conan:AlivcConan:1.0.4'
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:clipChildren="false"
+        android:focusable="false">
+
+        <ImageView
+            android:id="@+id/img_thumb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/iv_play_icon"
+            android:layout_width="@dimen/alivc_little_video_play_icon_width"
+            android:layout_height="@dimen/alivc_little_video_play_icon_height"
+            android:layout_gravity="center"
+            android:background="@drawable/aliyun_little_video_backgroud_circle_shape"
+            android:padding="15dp"
+            android:src="@mipmap/alivc_little_video_play"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</FrameLayout>

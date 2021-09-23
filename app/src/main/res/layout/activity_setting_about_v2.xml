@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/include_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="44dp"
+        android:background="@color/grayF9F9F9"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/tv_app_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="29dp"
+                android:textColor="@color/gray888888" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/about_user_agreements"
+            style="@style/SettingItemLayoutStyle">
+
+            <TextView
+                style="@style/SettingItemTitleStyle"
+                android:text="@string/str_setting_about_user_agreements"
+                android:textColor="@color/black333333" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@mipmap/arrow_right" />
+        </LinearLayout>
+
+        <View
+            style="@style/ViewLineHorizontal"
+            android:layout_marginStart="15dp" />
+
+        <LinearLayout
+            android:id="@+id/about_privacy_policy"
+            style="@style/SettingItemLayoutStyle">
+
+            <TextView
+                style="@style/SettingItemTitleStyle"
+                android:text="@string/str_setting_about_privacy_agreements"
+                android:textColor="@color/black333333" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@mipmap/arrow_right" />
+        </LinearLayout>
+
+        <View
+            style="@style/ViewLineHorizontal"
+            android:layout_marginStart="15dp" />
+
+        <LinearLayout
+            android:id="@+id/about_disclaimer"
+            style="@style/SettingItemLayoutStyle">
+
+            <TextView
+                style="@style/SettingItemTitleStyle"
+                android:text="@string/str_setting_about_disclaimer"
+                android:textColor="@color/black333333" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@mipmap/arrow_right" />
+        </LinearLayout>
+
+        <View
+            style="@style/ViewLineHorizontal"
+            android:layout_marginStart="15dp" />
+
+        <LinearLayout
+            android:id="@+id/about_check_update"
+            style="@style/SettingItemLayoutStyle">
+
+            <TextView
+                style="@style/SettingItemTitleStyle"
+                android:text="@string/str_setting_about_check_update"
+                android:textColor="@color/black333333" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@mipmap/arrow_right" />
+        </LinearLayout>
+        <View
+            style="@style/ViewLineHorizontal"
+            android:layout_marginStart="15dp" />
+
+        <LinearLayout
+            android:id="@+id/licenses"
+            style="@style/SettingItemLayoutStyle">
+
+            <TextView
+                style="@style/SettingItemTitleStyle"
+                android:text="版权声明"
+                android:textColor="@color/black333333" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@mipmap/arrow_right" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:layout_gravity="center|bottom"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@mipmap/icon_setting_about_c" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:gravity="bottom|center"
+                    android:text="@string/str_setting_about_app_owner"
+                    android:textColor="@color/gray888888" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/package_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:layout_gravity="center|bottom"
+                android:gravity="bottom|center"
+                android:text="code"
+                android:textColor="@color/gray888888" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

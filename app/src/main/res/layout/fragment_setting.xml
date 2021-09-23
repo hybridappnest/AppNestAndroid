@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayF9F9F9"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/include_title_bar" />
+
+
+    <FrameLayout
+        android:id="@+id/webview_root"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/setting_safe_center"
+        style="@style/SettingItemLayoutStyle">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="安全中心" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="密码/手机号管理"
+            android:textSize="16sp"
+            android:textColor="@color/gray666666" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/setting_notification"
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="新消息通知" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/setting_phone_notice_setting"
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="手机消息提醒设置" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/setting_video_add_watermark"
+        android:layout_marginTop="1dp"
+        style="@style/SettingItemLayoutStyle">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="视频水印开关" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/btn_add_watermark"
+            android:layout_marginEnd="0dp"
+            style="@style/SettingSwitchButtonStyle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/setting_clean_cache"
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="清空缓存" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/setting_report"
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="问题反馈" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/setting_about_app"
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="关于鼎保信" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="版本1.0.0"
+            android:textSize="16sp"
+            android:textColor="@color/gray666666" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/arrow_right" />
+    </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/setting_logout"
+            android:layout_marginTop="50dp"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:background="@drawable/selector_login_btn_bg"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:text="退出登录"
+            android:textColor="@color/white" />
+</LinearLayout>

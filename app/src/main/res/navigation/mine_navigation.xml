@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mineFragment">
+
+    <fragment
+        android:id="@+id/mineFragment"
+        android:name="com.ymy.appnest.ui.setting.fragment.MineFragment"
+        android:label="MineFragment"
+        tools:layout="@layout/fragment_mine">
+        <action
+            android:id="@+id/action_mineFragment_to_mineSetHeaderFragment"
+            app:destination="@id/mineSetHeaderFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mineFragment_to_mineSetNicknameFragment"
+            app:destination="@id/mineSetNicknameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/mineSetHeaderFragment"
+        android:name="com.ymy.appnest.ui.setting.fragment.MineSetHeaderFragment"
+        android:label="MineSetHeaderFragment"
+        tools:layout="@layout/fragment_set_header">
+        <action
+            android:id="@+id/action_mineSetHeaderFragment_to_mineHeaderCropperFragment"
+            app:destination="@id/mineHeaderCropperFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/mineSetNicknameFragment"
+        android:name="com.ymy.appnest.ui.setting.fragment.MineSetNicknameFragment"
+        android:label="MineSetNicknameFragment"
+        tools:layout="@layout/fragment_set_nickname" />
+    <fragment
+        android:id="@+id/mineHeaderCropperFragment"
+        android:name="com.ymy.appnest.ui.setting.fragment.MineHeaderCropperFragment"
+        android:label="MineHeaderCropperFragment"
+        tools:layout="@layout/fragment_header_cropper">
+        <argument
+            android:name="imageUri"
+            android:defaultValue=''
+            app:argType="string" />
+    </fragment>
+
+</navigation>

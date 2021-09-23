@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/settingFragment">
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.ymy.appnest.ui.setting.fragment.SettingFragment"
+        android:label="settingFragment"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/action_settingFragment_to_settingSafeCenterFragment"
+            app:destination="@id/settingSafeCenterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_settingFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingSafeCenterFragment"
+        android:name="com.ymy.appnest.ui.setting.fragment.SettingSafeCenterFragment"
+        android:label="SettingSafeCenterFragment"
+        tools:layout="@layout/fragment_setting_safe_center">
+        <action
+            android:id="@+id/action_settingSafeCenterFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_settingSafeCenterFragment_to_changePhoneFragment"
+            app:destination="@id/changePhoneFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.ymy.appnest.ui.setting.fragment.ChangePasswordFragment"
+        android:label="ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_password"/>
+    <fragment
+        android:id="@+id/changePhoneFragment"
+        android:name="com.ymy.appnest.ui.setting.fragment.ChangePhoneFragment"
+        android:label="ChangePhoneFragment"
+        tools:layout="@layout/fragment_change_phone" />
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.ymy.appnest.web.custom.ui.WebViewFragment"
+        android:label="WebViewFragment"
+        tools:layout="@layout/fragment_webview">
+        <argument
+            android:name="url"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="showTitleBar"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="needBackgroundColor"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="showRightMenu"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="showBackIcon"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <argument
+            android:name="addTopPadding"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="showRefreshBar"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="pushData"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+
+</navigation>

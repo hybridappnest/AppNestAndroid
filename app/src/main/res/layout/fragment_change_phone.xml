@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/container"
+    android:layout_height="match_parent"
+    android:background="@color/grayF9F9F9"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/include_title_bar" />
+
+    <LinearLayout
+        style="@style/SettingItemLayoutStyle">
+
+        <TextView
+            android:text="旧手机号"
+            style="@style/SettingItemTitleStyle"/>
+
+        <FrameLayout
+            android:id="@+id/tv_title_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_old_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="15dp"
+                android:textSize="16sp"
+                android:text="旧手机号" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        style="@style/SettingItemLayoutStyle">
+
+        <TextView
+            android:text="新手机号"
+            style="@style/SettingItemTitleStyle" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/ed_new_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:gravity="end"
+                android:hint="请输入新手机号码"
+                android:inputType="phone"
+                android:lines="1"
+                android:text=""
+                android:paddingEnd="15dp"
+                android:textColor="@color/black333333"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        style="@style/SettingItemLayoutStyle">
+
+        <TextView
+            android:text="手机验证"
+            style="@style/SettingItemTitleStyle" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/ed_new_phone_varcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:gravity="end"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:lines="1"
+                android:text=""
+                android:textColor="@color/black333333"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp"
+                android:paddingEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_request_varcode"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_login_button_bg_disable_notran"
+            android:text="发送验证码"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

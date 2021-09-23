@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@mipmap/bg_mine_tab_header"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/header_layout"
+            layout="@layout/include_mine_header"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_mine_list"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:overScrollMode="never"
+        tools:itemCount="4"
+        android:background="@color/content_white_bg"
+        android:paddingBottom="10dp"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_mine_list" />
+</LinearLayout>

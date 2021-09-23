@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ymy.player">
+
+    <application>
+
+        <activity
+            android:name="com.ymy.player.activity.LearnTikTokMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.ymy.player.activity.ImagePickerBridgeActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Translucent"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

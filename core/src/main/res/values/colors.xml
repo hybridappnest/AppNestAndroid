@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    主色-->
+    <color name="app_blue">#09287D</color>
+    <!--    内容背景颜色-->
+    <color name="content_bg">#F6F7FA</color>
+    <!--    指示器文字颜色-->
+    <color name="indicator_text_color">#68696e</color>
+    <!--    标题文字颜色-->
+    <color name="title_text_color">#1e1e1e</color>
+    <!--    副标题文字颜色-->
+    <color name="sub_text_color">#a5a5a6</color>
+    <!--    红点颜色-->
+    <color name="red_dot_color">#fe5861</color>
+    <!--    聊天列表标签颜色-->
+    <color name="im_item_market_color">#5999e5</color>
+    <!--    List列表中的分割线-->
+    <color name="list_item_decoration_color">#f8f8f8</color>
+    <!--    内容背景白色-->
+    <color name="content_white_bg">#fefffe</color>
+    <!--    底部栏分割线颜色-->
+    <color name="bottom_bar_decoration_color">#F0F2F3</color>
+    <!--    底部栏背景色-->
+    <color name="bottom_bar_bg_color">#f9fafb</color>
+    <color name="transparent">#00000000</color>
+
+
+    <color name="black60tan">#99000000</color>
+    <color name="black50tan">#80000000</color>
+    <color name="black40tan">#66000000</color>
+    <color name="black">#000000</color>
+    <color name="black30tan">#33000000</color>
+    <color name="read_dot_bg">#f74c31</color>
+    <color name="white">#ffffff</color>
+
+    <color name="blue99A8FF20tran">#3399A8FF</color>
+    <color name="redDF2024">#DF2024</color>
+    <color name="orangeFE7100">#FE7100</color>
+    <color name="yellowEEE401">#EEE401</color>
+    <color name="blue1389E8">#1389E8</color>
+    <color name="green00EFC1">#00EFC1</color>
+    <color name="gray888888">#888888</color>
+    <color name="gray666666">#666666</color>
+    <color name="black00102e">#00102e</color>
+    <color name="green9CA9FDEE">#9CA9FDEE</color>
+    <color name="grayF9F9F9">#F9F9F9</color>
+    <color name="grayF0F3F4">#F0F3F4</color>
+    <color name="graycccccc">#cccccc</color>
+    <color name="whiteFBFBFB">#FBFBFB</color>
+    <color name="lightblue00DEFF">#00DEFF</color>
+    <color name="grayE5E5E550tran">#80E5E5E5</color>
+    <color name="grayE5E5E530tran">#4DE5E5E5</color>
+    <color name="grayE5E5E5">#E5E5E5</color>
+    <color name="blue1DEBFF">#1DEBFF</color>
+    <color name="blue1D65E3">#1D65E3</color>
+    <color name="orangeEA8316">#EA8316</color>
+
+    <color name="blue1289E7">#1289E7</color>
+    <color name="green00F0C0">#00F0C0</color>
+    <color name="blue0B297E">#0B297E</color>
+    <color name="blue06164330tran">#4D061643</color>
+    <color name="black333333">#333333</color>
+    <color name="depRedAF4208">#AF4208</color>
+    <color name="graybbbbbb">#bbbbbb</color>
+    <color name="grayE4E6E4">#E4E6E4</color>
+    <color name="orangeEE7930">#EE7930</color>
+    <color name="blue32b8ec">#32b8ec</color>
+
+
+
+    <color name="alivc_common_bg_black">#ff000000</color>
+    <color name="alivc_common_bg_black_alpha_30">#4d000000</color>
+    <color name="alivc_common_bg_black_alpha_40">#66000000</color>
+    <color name="alivc_common_bg_black_alpha_50">#7f000000</color>
+    <color name="alivc_common_bg_black_alpha_60">#99000000</color>
+    <color name="alivc_common_bg_black_alpha_70">#B3000000</color>
+    <color name="alivc_common_bg_black_alpha_80">#CC000000</color>
+    <color name="alivc_common_bg_black_alpha_90">#E3000000</color>
+    <color name="alivc_common_bg_orange">#FC7729</color>
+    <color name="alivc_common_bg_cyan">#119797</color>
+    <color name="alivc_common_bg_cyan_light">#00C1DE</color>
+    <color name="alivc_common_bg_red">#FC4347</color>
+    <color name="alivc_common_bg_red_darker">#FE4110</color>
+    <color name="alivc_common_bg_pink">#EF4B81</color>
+    <color name="alivc_common_bg_white_gray">#F5F5F5</color>
+
+</resources>

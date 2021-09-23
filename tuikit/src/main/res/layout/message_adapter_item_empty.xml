@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:paddingBottom="12.6dp">
+    <LinearLayout
+        android:id="@+id/im_msg_slect_layout"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+        <TextView
+            android:id="@+id/chat_time_tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:includeFontPadding="false"
+            android:text="000"
+            android:layout_marginBottom="20.58dp"
+            android:layout_marginTop="8.98dp"
+            android:textColor="@color/text_tips_color"
+            android:textSize="12.6sp" />
+        <TextView
+            android:id="@+id/im_msg_slect"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/check_box_selected"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/chat_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:includeFontPadding="false"
+        android:layout_marginBottom="20.58dp"
+        android:layout_marginTop="7.98dp"
+        android:textColor="@color/text_tips_color"
+        android:textSize="12.6sp" />
+
+    <FrameLayout
+        android:id="@+id/msg_content_fl"
+        android:layout_below="@+id/chat_time_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

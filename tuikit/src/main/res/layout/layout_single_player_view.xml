@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!--    <TextureView-->
+<!--        android:id="@+id/video_textureview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/video_progress"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:focusable="true"
+            android:progress="1"
+            android:progressDrawable="@drawable/turnout_progressbar_horizontal"
+            android:splitTrack="false"
+            android:thumb="@color/transparent" />
+    </FrameLayout>
+</FrameLayout>

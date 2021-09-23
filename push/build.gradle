@@ -1,0 +1,59 @@
+import com.ymy.plugin.*
+
+plugins {
+    // 这个 id 就是在 versionPlugin 文件夹下 build.gradle 文件内定义的 id
+    id "com.ymy.plugin"
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+android {
+
+    compileSdkVersion BuildConfig.compileSdk
+    buildToolsVersion BuildConfig.buildTools
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdk
+        targetSdkVersion BuildConfig.targetSdk
+        consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField "String", "XIAOMI_APP_ID", "\"${PackageConfig.XIAOMI_APP_ID}\""
+        buildConfigField "String", "XIAOMI_APP_KEY", "\"${PackageConfig.XIAOMI_APP_KEY}\""
+
+        buildConfigField "String", "MEIZU_APP_ID", "\"${PackageConfig.MEIZU_APP_ID}\""
+        buildConfigField "String", "MEIZU_APP_KEY", "\"${PackageConfig.MEIZU_APP_KEY}\""
+
+        buildConfigField "String", "OPPO_APP_KEY", "\"${PackageConfig.OPPO_APP_KEY}\""
+        buildConfigField "String", "OPPO_APP_SECRET", "\"${PackageConfig.OPPO_APP_SECRET}\""
+
+        manifestPlaceholders =
+                [
+                        applictation_id: BuildConfig.applicationId,
+                        ali_appId      : PackageConfig.ali_appId,
+                        ali_appsecret  : PackageConfig.ali_appsecret,
+
+                        hw_push_appid  : PackageConfig.HW_push_appid,
+                        vivo_push_key  : PackageConfig.vivo_push_key,
+                        vivo_push_appId: PackageConfig.vivo_push_appId,
+                ]
+    }
+}
+
+dependencies {
+    implementation project(path: ':core')
+
+    //主通道依赖
+    implementation 'com.aliyun.ams:alicloud-android-push:3.4.0'
+    //辅助通道基础依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push:3.4.0'
+    //华为依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push-huawei:3.4.0'
+    //OPPO依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push-oppo:3.4.0'
+    //vivo依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push-vivo:3.4.0'
+    //魅族依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push-meizu:3.4.0'
+
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+}

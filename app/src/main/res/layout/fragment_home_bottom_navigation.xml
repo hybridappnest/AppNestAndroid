@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/mainViewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bottom_bar_decoration_color" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/navView"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/bottom_bar_bg_color"
+        tools:itemCount="5"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_bottom_navigation"
+        android:layout_height="56dp"/>
+
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            android:id="@+id/navView"-->
+<!--            style="@style/Widget.MaterialComponents.BottomNavigationView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/bottom_bar_bg_color"-->
+<!--            app:itemIconTint="@drawable/selector_main_bottom_navigation"-->
+<!--            app:itemTextColor="@drawable/selector_main_bottom_navigation"-->
+<!--            app:labelVisibilityMode="labeled"-->
+<!--            app:menu="@menu/bottom_nav_menu" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="52dp"-->
+<!--            android:elevation="16dp"-->
+<!--            android:visibility="gone">-->
+
+<!--            <View-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="2" />-->
+
+<!--            <FrameLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/navigation_center_image"-->
+<!--                    android:layout_width="48dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:background="@drawable/shape_home_bottom_center_bg"-->
+<!--                    android:src="@drawable/ic_add" />-->
+<!--            </FrameLayout>-->
+
+<!--            <View-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="2" />-->
+
+<!--        </LinearLayout>-->
+<!--    </FrameLayout>-->
+
+</LinearLayout>

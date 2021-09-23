@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/search_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/search_cancel"
+            android:layout_width="58dp"
+            android:layout_height="50dip"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="13dp" />
+
+
+        <TextView
+            android:id="@+id/search_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="选择一个会话"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#c1c1c1"
+            android:textSize="14dp" />
+
+
+        <ImageView
+            android:id="@+id/page_title_right_icon"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:scaleType="center"
+            android:src="@drawable/conversation_more" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/loadingroot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+</LinearLayout>

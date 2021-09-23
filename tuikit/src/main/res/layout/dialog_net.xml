@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="280dp"
+              android:layout_height="150dip"
+              android:background="@drawable/dialog_round"
+              android:gravity="center"
+              android:layout_gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dip"
+        android:lineSpacingExtra="3dp"
+        android:text="@string/video_not_wifi"
+        android:textColor="#696969"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginTop="3dp"
+        android:background="#c7c7c7" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="13dp"
+        android:gravity="bottom|center_horizontal">
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/dialog_save_button_selector"
+            android:text="@string/video_play_continue"
+            android:textColor="@android:color/white"
+            android:textSize="19sp" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/btn_continue"
+            android:background="@drawable/dialog_cancel_button_selector"
+            android:text="@string/video_play_cancle"
+            android:textColor="@android:color/white"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayF9F9F9"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/include_title_bar" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_set_user_header"
+        style="@style/SettingItemLayoutStyle"
+        android:layout_height="94dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="头像" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_user_header"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="4dp"
+            android:src="@mipmap/icon_default_header" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_set_user_nickname"
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="昵称" />
+
+
+        <TextView
+            android:id="@+id/tv_mine_nickname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray666666"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:gravity="end"
+            android:maxLines="1"
+            android:layout_marginEnd="4dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="真实姓名" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_mine_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:layout_marginEnd="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="性别" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_mine_sexual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:layout_marginEnd="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="身份证" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_mine_user_idcard_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:layout_marginEnd="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/SettingItemLayoutStyle"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            style="@style/SettingItemTitleStyle"
+            android:text="手机" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_mine_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black333333"
+            android:layout_marginEnd="15dp" />
+    </LinearLayout>
+</LinearLayout>

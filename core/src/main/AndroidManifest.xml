@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ymy.core">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+
+        <provider
+            android:name=".Ktx"
+            android:authorities="${applicationId}.KtxInstaller"
+            android:exported="false" />
+
+        <provider
+            android:name=".utils.TUIKitFileProvider"
+            android:authorities="${applicationId}.uikit.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths_public"/>
+        </provider>
+
+        <activity
+            android:name="com.ymy.core.permission.RequestPermissionActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/Translucent" />
+    </application>
+</manifest>

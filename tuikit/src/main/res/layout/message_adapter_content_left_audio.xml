@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="276dp"
+    android:layout_height="wrap_content"
+    android:minWidth="@dimen/item_width">
+
+    <LinearLayout
+        android:id="@+id/audio_content_ll"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:background="@drawable/chat_other_bg"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/audio_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:textColor="#333333"
+            android:textSize="14.5sp" />
+
+        <ImageView
+            android:id="@+id/audio_play_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/voice_msg_playing_im" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayF9F9F9"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <include layout="@layout/title_bar_layout" />
+
+    <FrameLayout
+        android:id="@+id/fl_image_root"
+        android:layout_width="match_parent"
+        android:background="@color/bg_black"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+</LinearLayout>

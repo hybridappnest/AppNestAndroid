@@ -1,0 +1,28 @@
+apply plugin: 'kotlin'
+apply plugin: 'java-gradle-plugin'
+
+buildscript {
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+    }
+    dependencies {
+        // 因为使用的 Kotlin 需要需要添加 Kotlin 插件
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
+    }
+}
+
+repositories {
+    // 需要添加 jcenter 否则会提示找不到 gradlePlugin
+    maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+}
+
+gradlePlugin {
+    plugins {
+        version {
+            // 在 app 模块需要通过 id 引用这个插件
+            id = 'com.ymy.plugin'
+            // 实现这个插件的类的路径
+            implementationClass = 'com.ymy.plugin.VersionPlugin'
+        }
+    }
+}

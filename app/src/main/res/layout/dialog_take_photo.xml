@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/shape_dialog_white_bg"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_selected_by_album"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="选择一张新照片"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <View
+        style="@style/ViewLineHorizontal"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/str_cancel"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+</LinearLayout>
