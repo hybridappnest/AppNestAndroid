@@ -378,7 +378,14 @@ data class MineItemBean(
     val url: String = "",
 ) : Serializable
 ```
+## 加入讨论群
+| 微信 | QQ |
+|-----------------------|:-----------------------|
+| ![微信](./src/assets/Wechat.png) | ![QQ](./src/assets/QQ.png) |
+| ![微信](https://github.com/hybridappnest/AppNestWeb/blob/master/src/assets/Wechat.png) | ![QQ](https://github.com/hybridappnest/AppNestWeb/blob/master/src/assets/QQ.png) |
 
+## LICENSE
+Apache License Version 2.0
 
 
 
