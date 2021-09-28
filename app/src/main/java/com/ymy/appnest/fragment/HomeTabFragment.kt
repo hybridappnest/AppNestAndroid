@@ -7,21 +7,18 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.ymy.fragment.ConversationFragment
-import com.ymy.fragment.TabMsgFragment
-import com.ymy.fragment.TabNewMsgFragment
-import com.umeng.analytics.pro.by
-import com.ymy.core.base.BaseFragment
-import com.ymy.core.base.ChangeTaber
-import com.ymy.core.base.Refresher
 import com.ymy.appnest.ConfigManager
 import com.ymy.appnest.R
 import com.ymy.appnest.adapter.BottomNavigationAdapter
 import com.ymy.appnest.beans.HomeTabType
 import com.ymy.appnest.databinding.FragmentHomeBottomNavigationBinding
 import com.ymy.appnest.fragment.mine.TabMineV2Fragment
-import com.ymy.appnest.web.custom.ui.WebViewFragment
+import com.ymy.core.base.BaseFragment
+import com.ymy.core.base.ChangeTaber
+import com.ymy.core.base.Refresher
 import com.ymy.core.base.getColorCompat
+import com.ymy.fragment.TabNewMsgFragment
+import com.ymy.web.custom.ui.WebViewFragment
 
 
 /**

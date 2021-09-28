@@ -69,14 +69,13 @@ dependencies {
     implementation project(path: ':tuikit')
     implementation project(path: ':player')
     implementation project(path: ':push')
+    implementation project(path: ':web')
     implementation AndroidX.constraintlayout
     implementation AndroidX.navigation_fragment_ktx
     implementation AndroidX.navigation_ui_ktx
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation AndroidX.swiperefreshlayout
-    implementation Third.agentweb
     implementation Third.circleimageview
     implementation Third.switchbutton
     implementation 'com.huawei.hms:scanplus:1.3.2.300'

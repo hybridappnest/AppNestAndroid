@@ -1,4 +1,4 @@
-package com.ymy.appnest.web.custom
+package com.ymy.web.custom
 
 import android.content.Context
 import android.content.Intent

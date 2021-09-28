@@ -23,6 +23,10 @@ android {
 
         buildConfigField "String", "VERSION_NAME", "\"$BuildConfig.versionName\""
         buildConfigField "int", "VERSION_CODE", "$BuildConfig.versionCode"
+
+        buildConfigField "String", "OSS_stsServer", "\"${PackageConfig.OSS_stsServer}\""
+        buildConfigField "String", "OSS_endpoint", "\"${PackageConfig.OSS_endpoint}\""
+        buildConfigField "String", "OSS_bucketName", "\"${PackageConfig.OSS_bucketName}\""
     }
 
     buildTypes {

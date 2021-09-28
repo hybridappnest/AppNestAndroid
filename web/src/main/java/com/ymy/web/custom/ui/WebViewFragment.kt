@@ -1,4 +1,4 @@
-package com.ymy.appnest.web.custom.ui
+package com.ymy.web.custom.ui
 
 import android.view.View
 import com.just.agentweb.AgentWeb
@@ -6,11 +6,10 @@ import com.ymy.core.base.BaseFragment
 import com.ymy.core.base.Refresher
 import com.ymy.core.notchtools.NotchTools
 import com.ymy.core.umeng.UmengUtils
-import com.ymy.appnest.web.custom.H5WebView
-import com.ymy.appnest.web.custom.WebViewTitleBarController
-import com.ymy.appnest.R
-import com.ymy.appnest.databinding.FragmentWebviewBinding
-import com.ymy.appnest.ui.MainActivity
+import com.ymy.web.R
+import com.ymy.web.custom.H5WebView
+import com.ymy.web.custom.WebViewTitleBarController
+import com.ymy.web.databinding.FragmentWebviewBinding
 
 /**
  * Created on 1/28/21 08:29.
@@ -98,8 +97,6 @@ class WebViewFragment : BaseFragment(true), WebViewTitleBarController, Refresher
      * 初始化视图
      */
     override fun initView() {
-        if (requireActivity() is MainActivity) {
-        }
     }
 
     fun goBack(): Boolean {
@@ -157,7 +154,7 @@ class WebViewFragment : BaseFragment(true), WebViewTitleBarController, Refresher
             mBinding.swipeContainer.isEnabled = showRefreshBar
         }
         mBinding.swipeContainer.run {
-            setColorSchemeResources(R.color.colorPrimary)
+            setColorSchemeResources(R.color.app_blue)
             setOnRefreshListener {
                 onRefresh()
             }

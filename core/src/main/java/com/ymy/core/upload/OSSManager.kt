@@ -8,6 +8,7 @@ import com.alibaba.sdk.android.oss.model.ListObjectsRequest
 import com.alibaba.sdk.android.oss.model.ListObjectsResult
 import com.alibaba.sdk.android.oss.model.PutObjectRequest
 import com.orhanobut.logger.Logger
+import com.ymy.core.BuildConfig
 import com.ymy.core.Ktx
 import com.ymy.core.utils.FileUtils
 import kotlinx.coroutines.*
@@ -28,11 +29,12 @@ class OSSManager {
         private val oss: OSS
 
         //STS 鉴权服务器地址。
-        private const val stsServer = ""
+        private const val stsServer = BuildConfig.OSS_stsServer
 
         //节点地址
-        private const val endpoint = ""
-        private const val bucketName = "demo"
+        private const val endpoint = BuildConfig.OSS_endpoint
+        private const val bucketName = BuildConfig.OSS_bucketName
+
         const val webAssestsFolder = "webAssests/"
         const val imFolder = "im/"
         const val headerFolder = "userheader/"

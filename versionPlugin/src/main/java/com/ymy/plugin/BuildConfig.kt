@@ -30,7 +30,7 @@ object PackageConfig {
     const val WX_APP_ID: String = ""
 
     /**
-     * 华为_pushx
+     * 华为_push
      */
     const val HW_push_appid: String = ""
 
@@ -77,4 +77,14 @@ object PackageConfig {
     const val OPPO_APP_KEY: String = ""
 
     const val OPPO_APP_SECRET: String = ""
+
+
+    /**
+     * oss相关配置
+     */
+    const val OSS_stsServer: String = ""
+
+    const val OSS_endpoint: String = ""
+
+    const val OSS_bucketName: String = ""
 }

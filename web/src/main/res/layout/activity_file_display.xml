@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:ignore="MissingDefaultResource">
 
-    <include layout="@layout/include_title_bar" />
+    <include layout="@layout/include_web_title_bar" />
 
     <RelativeLayout
         android:id="@+id/rl_tbsView"

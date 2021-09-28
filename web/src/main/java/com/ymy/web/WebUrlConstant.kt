@@ -1,4 +1,4 @@
-package com.ymy.appnest.web
+package com.ymy.web
 
 import com.ymy.core.user.YmyUserManager
 import com.ymy.core.utils.Preference

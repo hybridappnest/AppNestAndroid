@@ -1,9 +1,9 @@
-package com.ymy.appnest.web.beans
+package com.ymy.web.beans
 
 
 import com.google.gson.annotations.SerializedName
 import com.ymy.core.user.YmyUserManager
-import com.ymy.appnest.web.WebUrlConstant
+import com.ymy.web.WebUrlConstant
 
 data class WebEnvs(
     @SerializedName("baseUrl")

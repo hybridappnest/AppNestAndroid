@@ -1,0 +1,44 @@
+{
+  "main": [
+    {
+      "name": "测试",
+      "iconUrl": "https://dbx-assets.oss-cn-shanghai.aliyuncs.com/H5/icon_daily_normal.webp?versionId=CAEQLhiBgIDSheCH3xciIDc2ZDVmNjdkMTg4ZjQ1MmU5NDAwNGMyOTczNjI4YWU2",
+      "textColorRes": "#595F7E",
+      "textColorResSelected": "#32B8EC",
+      "url": "https://www.baidu.com/",
+      "type": "IM"
+    },
+    {
+      "name": "测试",
+      "iconUrl": "https://dbx-assets.oss-cn-shanghai.aliyuncs.com/H5/icon_daily_normal.webp?versionId=CAEQLhiBgIDSheCH3xciIDc2ZDVmNjdkMTg4ZjQ1MmU5NDAwNGMyOTczNjI4YWU2",
+      "textColorRes": "#595F7E",
+      "textColorResSelected": "#32B8EC",
+      "url": "http://192.168.123.80:8080/login",
+      "type": "web"
+    },
+    {
+      "name": "测试",
+      "iconUrl": "https://dbx-assets.oss-cn-shanghai.aliyuncs.com/H5/icon_daily_normal.webp?versionId=CAEQLhiBgIDSheCH3xciIDc2ZDVmNjdkMTg4ZjQ1MmU5NDAwNGMyOTczNjI4YWU2",
+      "textColorRes": "#595F7E",
+      "textColorResSelected": "#32B8EC",
+      "url": "http://192.168.123.80:8080/contacts",
+      "type": "web"
+    },
+    {
+      "name": "测试",
+      "iconUrl": "https://dbx-assets.oss-cn-shanghai.aliyuncs.com/H5/icon_daily_normal.webp?versionId=CAEQLhiBgIDSheCH3xciIDc2ZDVmNjdkMTg4ZjQ1MmU5NDAwNGMyOTczNjI4YWU2",
+      "textColorRes": "#595F7E",
+      "textColorResSelected": "#32B8EC",
+      "url": "http://192.168.123.80:8080/profile",
+      "type": "web"
+    },
+    {
+      "name": "我的",
+      "iconUrl": "https://dbx-assets.oss-cn-shanghai.aliyuncs.com/H5/icon_daily_normal.webp?versionId=CAEQLhiBgIDSheCH3xciIDc2ZDVmNjdkMTg4ZjQ1MmU5NDAwNGMyOTczNjI4YWU2",
+      "textColorRes": "#595F7E",
+      "textColorResSelected": "#32B8EC",
+      "url": "https://www.baidu.com/",
+      "type": "mine"
+    }
+  ]
+}

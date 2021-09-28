@@ -10,9 +10,9 @@ import com.ymy.core.utils.BrandUtil
 import com.ymy.appnest.BuildConfig
 import com.ymy.appnest.R
 import com.ymy.appnest.databinding.FragmentSettingBinding
-import com.ymy.appnest.web.WebUrlConstant
-import com.ymy.appnest.web.custom.H5WebView
-import com.ymy.appnest.web.custom.ui.WebViewFragmentArgs
+import com.ymy.web.WebUrlConstant
+import com.ymy.web.custom.H5WebView
+import com.ymy.web.custom.ui.WebViewFragmentArgs
 import java.lang.ref.WeakReference
 
 /**

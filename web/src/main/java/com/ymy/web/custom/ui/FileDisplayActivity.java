@@ -1,4 +1,4 @@
-package com.ymy.appnest.web.custom.ui;
+package com.ymy.web.custom.ui;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -32,7 +32,7 @@ import com.tencent.smtt.sdk.QbSdk;
 import com.tencent.smtt.sdk.TbsReaderView;
 import com.tencent.smtt.sdk.TbsReaderView.ReaderCallback;
 import com.tencent.smtt.sdk.ValueCallback;
-import com.ymy.appnest.R;
+import com.ymy.web.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

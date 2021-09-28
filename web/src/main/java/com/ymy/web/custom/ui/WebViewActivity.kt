@@ -1,11 +1,11 @@
-package com.ymy.appnest.web.custom.ui
+package com.ymy.web.custom.ui
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.Keep
 import com.ymy.core.base.BaseActivity
-import com.ymy.appnest.R
+import com.ymy.web.R
 import java.net.URLDecoder
 
 /**
