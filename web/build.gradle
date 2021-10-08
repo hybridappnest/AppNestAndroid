@@ -1,3 +1,5 @@
+import com.ymy.plugin.*
+
 plugins {
     // 这个 id 就是在 versionPlugin 文件夹下 build.gradle 文件内定义的 id
     id "com.ymy.plugin"

@@ -1,3 +1,5 @@
+import com.ymy.plugin.*
+
 plugins {
     id "com.ymy.plugin"
     id 'com.android.application'
