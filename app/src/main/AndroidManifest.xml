@@ -108,29 +108,12 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ymy.appnest.web.custom.ui.FileDisplayActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.ymy.appnest.ui.gallery.MaxViewV2Activity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.ymy.appnest.qrcode.HWQRCodeScannerActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.ymy.appnest.web.custom.ui.JSBridgeActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/Translucent" />
-        <activity
-            android:name="com.ymy.appnest.web.custom.ui.JSLoginBridgeActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/Translucent" />
-        <activity
-            android:name="com.ymy.appnest.web.custom.ui.WebViewActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.ymy.appnest.ui.setting.activity.MineActivity"
