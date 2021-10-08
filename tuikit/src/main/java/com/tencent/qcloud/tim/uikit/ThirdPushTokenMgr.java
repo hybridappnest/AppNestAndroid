@@ -2,8 +2,8 @@ package com.tencent.qcloud.tim.uikit;
 
 import android.text.TextUtils;
 
-import com.ymy.utils.DemoLog;
-import com.ymy.utils.PrivateConstants;
+import com.ymy.im.utils.DemoLog;
+import com.ymy.im.utils.PrivateConstants;
 import com.tencent.imsdk.v2.V2TIMCallback;
 import com.tencent.imsdk.v2.V2TIMManager;
 import com.tencent.imsdk.v2.V2TIMOfflinePushConfig;

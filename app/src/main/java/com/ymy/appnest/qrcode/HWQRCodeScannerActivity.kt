@@ -14,15 +14,14 @@ import com.huawei.hms.hmsscankit.RemoteView
 import com.huawei.hms.hmsscankit.ScanUtil
 import com.huawei.hms.ml.scan.HmsScan
 import com.huawei.hms.ml.scan.HmsScanAnalyzerOptions
+import com.ymy.appnest.R
+import com.ymy.appnest.databinding.ActivityQrcodeScannerBinding
 import com.ymy.core.base.BaseActivity
 import com.ymy.core.permission.DBXPermissionUtils
 import com.ymy.core.permission.requestPermission
 import com.ymy.core.utils.ToastUtils
-import com.ymy.appnest.R
-import com.ymy.appnest.databinding.ActivityQrcodeScannerBinding
-import com.ymy.appnest.web.custom.JSCallBack
-import com.ymy.appnest.web.custom.JSNotificationAction
-import com.ymy.appnest.web.custom.ui.JSBridgeActivity
+import com.ymy.web.custom.JSCallBack
+import com.ymy.web.custom.JSNotificationAction
 import java.io.IOException
 
 
@@ -41,7 +40,7 @@ class HWQRCodeScannerActivity : BaseActivity(true) {
         const val SCANNER_TYPE_ALL = 0
         const val PARAMS_KEY_RESULT = "qr_result"
         const val REQUEST_CODE_PHOTO = 0X1113
-        var jsCallBack: JSCallBack? = null
+        private var jsCallBack: JSCallBack? = null
         const val ACTION_ANNOUNCE = "ANNOUNCE"
 
         fun invoke(context: Context, jsCallBack: JSCallBack? = null, announce: Int = 0) {

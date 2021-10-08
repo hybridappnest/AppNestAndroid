@@ -54,20 +54,20 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths_public"/>
         </provider>
-        <activity android:name="com.ymy.activity.SelectSessionActivity" android:screenOrientation="portrait"/>
-        <activity android:name="com.ymy.activity.MaxViewActivity" android:screenOrientation="portrait"/>
-        <activity android:name="com.ymy.ijk.VideoDetailActivity" android:screenOrientation="portrait"/>
-        <activity android:name="com.ymy.ijk.AliVideoDetailActivity" android:screenOrientation="portrait"/>
-        <activity android:name="com.ymy.activity.AddMoreActivity"></activity>
-        <activity android:name="com.ymy.activity.StartC2CChatActivity"></activity>
-        <activity android:name="com.ymy.activity.StartGroupChatActivity"></activity>
-        <activity android:name="com.ymy.activity.BlackListActivity"></activity>
-        <activity android:name="com.ymy.activity.NewFriendActivity"></activity>
-        <activity android:name="com.ymy.activity.FriendProfileActivity"></activity>
-        <activity android:name="com.ymy.activity.GroupListActivity"></activity>
-        <activity android:name="com.ymy.activity.SearchGroupNameActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.ymy.im.activity.SelectSessionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ymy.im.activity.MaxViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ymy.im.ijk.VideoDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ymy.im.ijk.AliVideoDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ymy.im.activity.AddMoreActivity"></activity>
+        <activity android:name="com.ymy.im.activity.StartC2CChatActivity"></activity>
+        <activity android:name="com.ymy.im.activity.StartGroupChatActivity"></activity>
+        <activity android:name="com.ymy.im.activity.BlackListActivity"></activity>
+        <activity android:name="com.ymy.im.activity.NewFriendActivity"></activity>
+        <activity android:name="com.ymy.im.activity.FriendProfileActivity"></activity>
+        <activity android:name="com.ymy.im.activity.GroupListActivity"></activity>
+        <activity android:name="com.ymy.im.activity.SearchGroupNameActivity" android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.ymy.activity.ImChatActivity"
+            android:name="com.ymy.im.activity.ImChatActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden">
@@ -97,7 +97,13 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="com.ymy.activity.GroupMemberListActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.ymy.im.activity.GroupMemberListActivity" android:screenOrientation="portrait"/>
+
+
+        <provider
+            android:name="com.ymy.im.IMManager"
+            android:authorities="${applicationId}.IMInstaller"
+            android:exported="false" />
     </application>
 
 </manifest>

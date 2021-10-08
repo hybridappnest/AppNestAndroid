@@ -5,13 +5,13 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.os.Process
-import com.ymy.helper.ConfigHelper
-import com.ymy.signature.GenerateTestUserSig
+import com.alibaba.android.arouter.launcher.ARouter
 import com.lcw.library.imagepicker.ImagePicker
-import com.tencent.qcloud.tim.uikit.TUIKit
-import com.ymy.camera.CameraV2Activity
 import com.ymy.appnest.di.appModule
 import com.ymy.appnest.ui.SplashActivity
+import com.ymy.appnest.web.AppJSActionHandler
+import com.ymy.appnest.web.JSMainActionHandler
+import com.ymy.camera.CameraV2Activity
 import com.ymy.camera.JCameraView
 import com.ymy.core.base.IUIKitCallBack
 import com.ymy.core.exception.GlobalThreadUncaughtExceptionHandler
@@ -19,6 +19,8 @@ import com.ymy.core.ok3.DBXRetrofitClient
 import com.ymy.core.utils.TUIKitConstants
 import com.ymy.core.utils.UncaughtExceptionHandlerImpl
 import com.ymy.image.imagepicker.ImagePreManager
+import com.ymy.web.custom.JSActionManager
+import com.ymy.web.custom.JSBridge
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.logger.AndroidLogger
 import org.koin.core.context.startKoin
@@ -100,20 +102,25 @@ open class MainApplication : Application() {
             SplashActivity::class.java
         )
 
-        /**
-         * TUIKit的初始化函数
-         *
-         * @param context  应用的上下文，一般为对应应用的ApplicationContext
-         * @param sdkAppID 您在腾讯云注册应用时分配的sdkAppID
-         * @param configs  TUIKit的相关配置项，一般使用默认即可，需特殊配置参考API文档
-         */
-        TUIKit.init(this, GenerateTestUserSig.SDKAPPID, ConfigHelper().getConfigs(this))
-
         initImagePicker()
 
         closeAndroidPDialog()
 
         TUIKitConstants.initPath()
+
+        if (BuildConfig.DEBUG){
+            ARouter.openLog()
+            ARouter.openDebug()
+        }
+        ARouter.init(this)
+
+        JSBridge.jsMainActionHandler = JSMainActionHandler
+        JSActionManager.jsNotificationHandlers.add(AppJSActionHandler)
+    }
+
+    override fun onTerminate() {
+        super.onTerminate()
+        ARouter.getInstance().destroy()
     }
 
     private fun initImagePicker() {

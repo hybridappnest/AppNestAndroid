@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:layout_height="46dp"/>
     </FrameLayout>
-    <com.ymy.view.CustomViewPager
+    <com.ymy.im.view.CustomViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

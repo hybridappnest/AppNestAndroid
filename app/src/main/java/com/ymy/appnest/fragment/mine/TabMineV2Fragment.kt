@@ -21,8 +21,8 @@ import com.ymy.appnest.fragment.mine.adapter.MineItemAdapter
 import com.ymy.appnest.qrcode.HWQRCodeScannerActivity
 import com.ymy.appnest.ui.ACTION
 import com.ymy.appnest.ui.MainActivity
-import com.ymy.appnest.web.WebUrlConstant
-import com.ymy.appnest.web.custom.ui.WebViewActivity
+import com.ymy.web.WebUrlConstant
+import com.ymy.web.custom.ui.WebViewActivity
 
 
 /**

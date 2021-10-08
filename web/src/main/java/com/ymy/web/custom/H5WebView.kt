@@ -26,12 +26,12 @@ import com.ymy.core.BuildConfig
 import com.ymy.core.base.getColorCompat
 import com.ymy.core.glide.ImageLoader
 import com.ymy.core.lifecycle.KtxManager
+import com.ymy.core.ok3.DBXRetrofitClient.appContext
 import com.ymy.core.ok3.GsonUtils
-import com.ymy.appnest.web.WebUrlConstant
-import com.ymy.appnest.R
-import com.ymy.appnest.appContext
-import com.ymy.appnest.web.beans.WebEnvs
-import com.ymy.appnest.web.custom.ui.WebViewActivity
+import com.ymy.web.R
+import com.ymy.web.WebUrlConstant
+import com.ymy.web.beans.WebEnvs
+import com.ymy.web.custom.ui.WebViewActivity
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.InputStream

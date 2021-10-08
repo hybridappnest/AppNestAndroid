@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.View
 import android.widget.FrameLayout
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.tencent.qcloud.tim.uikit.R
+import com.ymy.appnest.R
 import com.ymy.appnest.ui.gallery.adapter.BaseGalleryItemProvider
 import com.ymy.appnest.ui.gallery.adapter.IGallerySourceModel
 import com.ymy.appnest.ui.gallery.bean.GalleryImage

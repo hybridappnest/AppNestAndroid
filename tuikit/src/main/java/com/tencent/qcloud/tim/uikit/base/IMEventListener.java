@@ -4,9 +4,9 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.ymy.down.listener.DownloadListener;
-import com.ymy.down.utils.DownloadUtils;
-import com.ymy.function.Func;
+import com.ymy.im.down.listener.DownloadListener;
+import com.ymy.im.down.utils.DownloadUtils;
+import com.ymy.im.function.Func;
 import com.google.gson.Gson;
 import com.tencent.imsdk.v2.V2TIMConversation;
 import com.tencent.imsdk.v2.V2TIMCustomElem;

@@ -61,10 +61,10 @@ import com.ymy.core.upload.UploadViewModel;
 import com.ymy.core.utils.MediaFileUtil;
 import com.ymy.core.utils.MediaUtils;
 import com.ymy.core.utils.StringUtils;
-import com.ymy.helper.ImHelper;
+import com.ymy.im.helper.ImHelper;
 import com.ymy.image.imagepicker.loader.GlideLoader;
-import com.ymy.signature.GenerateTestUserSig;
-import com.ymy.utils.DensityUtil;
+import com.ymy.im.signature.GenerateTestUserSig;
+import com.ymy.im.utils.DensityUtil;
 
 import org.jetbrains.annotations.NotNull;
 

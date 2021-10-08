@@ -2,7 +2,6 @@ package com.tencent.qcloud.tim.uikit.modules.chat.layout.message;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,8 +11,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ymy.function.Func;
-import com.ymy.helper.ImHelper;
+import com.ymy.im.function.Func;
+import com.ymy.im.helper.ImHelper;
 import com.tencent.qcloud.tim.uikit.component.PopupList;
 import com.tencent.qcloud.tim.uikit.component.action.PopActionClickListener;
 import com.tencent.qcloud.tim.uikit.component.action.PopMenuAction;

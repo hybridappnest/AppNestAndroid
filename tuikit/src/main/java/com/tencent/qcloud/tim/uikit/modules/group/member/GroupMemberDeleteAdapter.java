@@ -9,8 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ymy.net.IMHttpManager;
-import com.ymy.utils.CommenDialog;
+import com.ymy.im.net.IMHttpManager;
+import com.ymy.im.utils.CommenDialog;
 import com.tencent.imsdk.v2.V2TIMManager;
 import com.tencent.qcloud.tim.uikit.R;
 import com.tencent.qcloud.tim.uikit.TUIKit;

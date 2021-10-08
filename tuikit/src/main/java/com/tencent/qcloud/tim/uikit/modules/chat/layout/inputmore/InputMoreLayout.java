@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 
 import com.tencent.qcloud.tim.uikit.R;
 import com.tencent.qcloud.tim.uikit.TUIKit;
-import com.ymy.utils.DensityUtil;
+import com.ymy.im.utils.DensityUtil;
 
 import java.util.ArrayList;
 import java.util.List;

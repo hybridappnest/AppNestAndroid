@@ -6,9 +6,9 @@ import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.ymy.down.listener.DownloadListener;
-import com.ymy.down.utils.DownloadUtils;
-import com.ymy.function.Func;
+import com.ymy.im.down.listener.DownloadListener;
+import com.ymy.im.down.utils.DownloadUtils;
+import com.ymy.im.function.Func;
 import com.google.gson.Gson;
 import com.tencent.imsdk.v2.V2TIMCustomElem;
 import com.tencent.imsdk.v2.V2TIMDownloadCallback;

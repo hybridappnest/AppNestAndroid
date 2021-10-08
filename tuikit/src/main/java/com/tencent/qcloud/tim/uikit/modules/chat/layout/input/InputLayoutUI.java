@@ -17,9 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
-import com.ymy.activity.GroupMemberListActivity;
-import com.ymy.helper.ImHelper;
-import com.ymy.helper.type.EventType;
+import com.ymy.im.activity.GroupMemberListActivity;
+import com.ymy.im.helper.ImHelper;
+import com.ymy.im.helper.type.EventType;
 import com.tencent.qcloud.tim.uikit.R;
 import com.tencent.qcloud.tim.uikit.config.TUIKitConfigs;
 import com.tencent.qcloud.tim.uikit.modules.chat.GroupChatManagerKit;
@@ -29,7 +29,6 @@ import com.tencent.qcloud.tim.uikit.modules.chat.interfaces.IInputLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.inputmore.InputMoreActionUnit;
 import com.tencent.qcloud.tim.uikit.utils.PermissionUtils;
 import com.tencent.qcloud.tim.uikit.utils.TUIKitLog;
-import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
 import com.ymy.core.utils.StringUtils;
 
 import java.util.ArrayList;

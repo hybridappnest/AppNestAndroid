@@ -13,14 +13,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ymy.signature.GenerateTestUserSig;
-import com.google.gson.Gson;
 import com.tencent.cloud.qcloudasrsdk.common.QCloudAudioFormat;
 import com.tencent.cloud.qcloudasrsdk.common.QCloudAudioFrequence;
 import com.tencent.cloud.qcloudasrsdk.common.QCloudSourceType;
 import com.tencent.cloud.qcloudasrsdk.models.QCloudOneSentenceRecognitionParams;
 import com.tencent.cloud.qcloudasrsdk.recognizer.QCloudOneSentenceRecognizer;
 import com.tencent.cloud.qcloudasrsdk.recognizer.QCloudOneSentenceRecognizerListener;
+import com.ymy.im.signature.GenerateTestUserSig;
+import com.google.gson.Gson;
 import com.tencent.imsdk.v2.V2TIMCustomElem;
 import com.tencent.imsdk.v2.V2TIMManager;
 import com.tencent.imsdk.v2.V2TIMMessage;

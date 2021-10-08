@@ -14,9 +14,9 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ymy.activity.SelectSessionActivity;
-import com.ymy.helper.ImHelper;
-import com.ymy.utils.CommenDialog;
+import com.ymy.im.activity.SelectSessionActivity;
+import com.ymy.im.helper.ImHelper;
+import com.ymy.im.utils.CommenDialog;
 import com.google.gson.Gson;
 import com.tencent.imsdk.v2.V2TIMConversation;
 import com.tencent.imsdk.v2.V2TIMCustomElem;

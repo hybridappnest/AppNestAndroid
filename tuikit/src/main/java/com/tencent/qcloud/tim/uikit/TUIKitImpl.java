@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 
-import com.ymy.helper.ImHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.orhanobut.logger.Logger;
@@ -56,6 +55,7 @@ import com.ymy.core.manager.BeepHelper;
 import com.ymy.core.ok3.GsonUtils;
 import com.ymy.core.user.YmyUserManager;
 import com.ymy.core.utils.StringUtils;
+import com.ymy.im.helper.ImHelper;
 
 import java.io.File;
 import java.util.ArrayList;

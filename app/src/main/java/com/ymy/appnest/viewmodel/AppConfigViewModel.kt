@@ -9,7 +9,6 @@ import com.ymy.appnest.ConfigManager
 import com.ymy.appnest.appContext
 import com.ymy.appnest.beans.AppConfigResp
 import com.ymy.appnest.net.reporsity.NodeRepository
-import com.ymy.appnest.web.custom.H5WebView
 import com.ymy.core.base.BaseViewModel
 import com.ymy.core.datastore.DataStoreHelper
 import com.ymy.core.exts.fromJson

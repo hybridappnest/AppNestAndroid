@@ -13,11 +13,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.ymy.down.listener.DownloadListener;
-import com.ymy.down.utils.DownloadUtils;
-import com.ymy.ijk.AliVideoDetailActivity;
-import com.ymy.ijk.VideoDetailActivity;
-import com.ymy.module.MaxBean;
+import com.ymy.im.down.listener.DownloadListener;
+import com.ymy.im.down.utils.DownloadUtils;
+import com.ymy.im.ijk.AliVideoDetailActivity;
+import com.ymy.im.ijk.VideoDetailActivity;
+import com.ymy.im.module.MaxBean;
 import com.ymy.core.utils.MediaFileUtil;
 import com.tencent.imsdk.v2.V2TIMDownloadCallback;
 import com.tencent.imsdk.v2.V2TIMElem;

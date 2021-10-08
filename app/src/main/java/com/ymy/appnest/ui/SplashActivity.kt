@@ -8,7 +8,6 @@ import android.view.View
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
-import com.ymy.helper.ImHelper
 import com.ymy.core.base.BaseActivity
 import com.ymy.appnest.viewmodel.AppConfigViewModel
 import com.ymy.appnest.BuildConfig
@@ -35,15 +34,6 @@ class SplashActivity : BaseActivity(true) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             setCutoutMode()
         }
-        ImHelper.login("10066",object:ImHelper.LoginCallBack{
-            override fun success() {
-
-            }
-
-            override fun error(str: String?) {
-            }
-
-        })
     }
 
     @RequiresApi(Build.VERSION_CODES.P)

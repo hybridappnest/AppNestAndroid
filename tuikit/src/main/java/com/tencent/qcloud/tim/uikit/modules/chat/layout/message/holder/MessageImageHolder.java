@@ -11,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.ymy.activity.MaxViewActivity;
-import com.ymy.module.MaxBean;
+import com.ymy.im.activity.MaxViewActivity;
+import com.ymy.im.module.MaxBean;
 import com.orhanobut.logger.Logger;
 import com.tencent.imsdk.v2.V2TIMDownloadCallback;
 import com.tencent.imsdk.v2.V2TIMElem;

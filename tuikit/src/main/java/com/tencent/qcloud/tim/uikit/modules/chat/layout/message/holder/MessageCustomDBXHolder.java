@@ -6,8 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.ymy.helper.ImHelper;
-import com.ymy.helper.type.WebViewType;
+import com.ymy.im.helper.ImHelper;
 import com.tencent.qcloud.tim.uikit.R;
 import com.tencent.qcloud.tim.uikit.TUIKit;
 import com.tencent.qcloud.tim.uikit.component.NoticeEventLayout;

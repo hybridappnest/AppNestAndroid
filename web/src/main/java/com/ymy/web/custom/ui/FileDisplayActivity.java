@@ -356,12 +356,8 @@ public class FileDisplayActivity extends Activity implements ReaderCallback,
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_back:
-                finish();
-                break;
-            default:
-                break;
+        if (v.getId() == R.id.btn_back) {
+            finish();
         }
     }
 

@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.ymy.helper.ImHelper
+import com.ymy.im.helper.ImHelper
 import com.tencent.qcloud.tim.uikit.R
 import com.tencent.qcloud.tim.uikit.TUIKit
 import com.tencent.qcloud.tim.uikit.modules.message.Entry
@@ -77,7 +77,7 @@ class MessageFunctionInChatHolder(itemView: View?) : MessageContentHolder(itemVi
                 msgContentFrame.setOnClickListener {
                     val url = custom.url
                     if(url.isNotEmpty()){
-                        ImHelper.getDBXSendReq().goToWebActivity(url)
+                        com.ymy.im.helper.ImHelper.getDBXSendReq().goToWebActivity(url)
                     }
                 }
                 val layoutParams = msgContentFrame.layoutParams

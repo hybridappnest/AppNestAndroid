@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.ymy.helper.ImHelper;
+import com.ymy.im.helper.ImHelper;
 import com.tencent.qcloud.tim.uikit.R;
 import com.tencent.qcloud.tim.uikit.component.face.FaceManager;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.utils.LongClickLinkMovementMethod;

@@ -9,8 +9,8 @@ import com.ymy.core.BuildConfig
 import com.ymy.core.base.BaseActivity
 import com.ymy.appnest.R
 import com.ymy.appnest.databinding.ActivitySettingAboutV2Binding
-import com.ymy.appnest.web.WebUrlConstant
-import com.ymy.appnest.web.custom.ui.WebViewActivity
+import com.ymy.web.WebUrlConstant
+import com.ymy.web.custom.ui.WebViewActivity
 
 
 /**

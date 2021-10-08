@@ -17,9 +17,9 @@ import com.ymy.core.upload.UploadUtils
 import com.ymy.core.upload.UploadViewModel
 import com.ymy.core.utils.FileUtil
 import com.ymy.image.imagepicker.startPickerImage
-import com.ymy.appnest.web.custom.JSCallBack
-import com.ymy.appnest.web.custom.DEFAULT_JS_SUFFIX
-import com.ymy.appnest.web.custom.JSNotificationAction
+import com.ymy.web.custom.DEFAULT_JS_SUFFIX
+import com.ymy.web.custom.JSCallBack
+import com.ymy.web.custom.JSNotificationAction
 import org.koin.android.ext.android.inject
 import java.io.*
 

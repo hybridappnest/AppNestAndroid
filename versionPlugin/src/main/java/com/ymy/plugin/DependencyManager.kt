@@ -210,4 +210,8 @@ object Glide {
 object Aliyun {
     //    阿里播放器
     const val AliyunPlayer = "com.aliyun.sdk.android:AliyunPlayer:4.7.3-full"
+
+    const val arouterApi = "com.alibaba:arouter-api:1.5.2"
+    const val arouterComplier = "com.alibaba:arouter-compiler:1.5.2"
+
 }

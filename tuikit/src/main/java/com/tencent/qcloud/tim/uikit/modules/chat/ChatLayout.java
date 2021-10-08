@@ -19,7 +19,7 @@ import com.tencent.qcloud.tim.uikit.modules.group.info.GroupInfo;
 import com.tencent.qcloud.tim.uikit.modules.group.info.GroupInfoActivity;
 import com.tencent.qcloud.tim.uikit.utils.TUIKitConstants;
 import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
-import com.ymy.helper.ImHelper;
+import com.ymy.im.helper.ImHelper;
 
 import java.util.List;
 

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.tencent.qcloud.tim.uikit.R;
 import com.ymy.core.ui.IMUIPresenter;
-import com.ymy.helper.type.EventType;
+import com.ymy.im.helper.type.EventType;
 
 import org.jetbrains.annotations.NotNull;
 

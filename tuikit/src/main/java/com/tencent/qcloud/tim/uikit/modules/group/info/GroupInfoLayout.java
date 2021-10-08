@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
-import com.ymy.fragment.ChatFragment;
+import com.ymy.im.fragment.ChatFragment;
 import com.tencent.imsdk.v2.V2TIMCallback;
 import com.tencent.imsdk.v2.V2TIMGroupInfo;
 import com.tencent.imsdk.v2.V2TIMManager;

@@ -11,16 +11,6 @@ import com.alibaba.fastjson.JSONObject
 import com.google.gson.Gson
 import com.jeremyliao.liveeventbus.core.LiveEvent
 import com.orhanobut.logger.Logger
-import com.ymy.appnest.R
-import com.ymy.appnest.qrcode.HWQRCodeScannerActivity
-import com.ymy.appnest.ui.MainActivity
-import com.ymy.appnest.ui.gallery.BigImageDisplayActivity
-import com.ymy.appnest.ui.gallery.MaxViewV2Activity
-import com.ymy.appnest.ui.gallery.adapter.IGallerySourceModel
-import com.ymy.appnest.web.custom.*
-import com.ymy.appnest.web.custom.ui.FileDisplayActivity
-import com.ymy.appnest.web.custom.ui.JSBridgeActivity
-import com.ymy.appnest.web.custom.ui.JSLoginBridgeActivity
 import com.ymy.core.base.getColorCompat
 import com.ymy.core.bean.MaxBean
 import com.ymy.core.lifecycle.KtxManager.currentActivity
@@ -32,9 +22,13 @@ import com.ymy.core.user.YmyUserManager
 import com.ymy.core.utils.StringUtils
 import com.ymy.core.utils.ToastUtils
 import com.ymy.core.utils.UrlUtils
+import com.ymy.web.R
+import com.ymy.web.custom.ui.FileDisplayActivity
+import com.ymy.web.custom.ui.JSBridgeActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.Serializable
+import kotlin.math.abs
 
 /**
  * Created on 1/28/21 08:48.
@@ -55,6 +49,27 @@ interface JSCallBack {
     fun customEventCallBack(eventName: String, params: String)
 }
 
+interface JSMainActionHandler {
+    fun goHomePage(context: Context)
+
+    fun showBigImage(context: Context, ImageUrl: String)
+
+    fun jumpToVideoPlayer(context: Context, str: String)
+}
+
+abstract class JSNotificationHandler {
+
+    val notificationList: MutableList<String> = mutableListOf()
+
+    abstract fun onNewNotification(
+        context: Context,
+        eventName: String = "",
+        param: JSONObject,
+        announce: Int,
+        jsCallBack: JSCallBack,
+    ): Boolean
+}
+
 object WebViewDataCache {
     var cachePopData: String? = null
 }
@@ -63,6 +78,7 @@ open class JSBridge(val context: Context?, private val jsCallBack: JSCallBack) {
 
     companion object {
         const val TAG = "JSBridge"
+        var jsMainActionHandler: JSMainActionHandler? = null
     }
 
     @JavascriptInterface
@@ -108,7 +124,7 @@ open class JSBridge(val context: Context?, private val jsCallBack: JSCallBack) {
                                         val toRoot = jsonObject.getBoolean("toRoot")
                                         toRoot?.let {
                                             if (it) {
-                                                goToAppHomePage()
+                                                jsMainActionHandler?.goHomePage(context)
                                                 return@launch
                                             }
                                         }
@@ -182,19 +198,11 @@ open class JSBridge(val context: Context?, private val jsCallBack: JSCallBack) {
                                     return@launch
                                 }
                                 UrlUtils.FILE_TYPE_IMAGE -> {
-                                    context.let {
-                                        BigImageDisplayActivity.actionStart(
-                                            it as Context,
-                                            urlNoParam,
-                                            ""
-                                        )
-                                    }
+                                    jsMainActionHandler?.showBigImage(context, urlNoParam)
                                     return@launch
                                 }
                                 UrlUtils.FILE_TYPE_VIDEO -> {
-                                    context.let {
-                                        jumpToVideoPlayer(it, urlNoParam)
-                                    }
+                                    jsMainActionHandler?.jumpToVideoPlayer(context, urlNoParam)
                                     return@launch
                                 }
                             }
@@ -224,9 +232,9 @@ open class JSBridge(val context: Context?, private val jsCallBack: JSCallBack) {
                                 }"
                             )
                             JSActionManager.sendActionEvent(
+                                context,
                                 name,
                                 paramsData,
-                                context,
                                 jsCallBack,
                                 announce
                             )
@@ -236,173 +244,71 @@ open class JSBridge(val context: Context?, private val jsCallBack: JSCallBack) {
             }
         }
     }
-
-    private fun jumpToVideoPlayer(context: Context, urlNoParam: String) {
-        val also = MaxBean().Data().also {
-            it.coverUrl = ""
-            it.type = IGallerySourceModel.video.toString()
-            it.url = urlNoParam
-        }
-        MaxViewV2Activity.invoke(context, MaxBean().apply {
-            index = 0
-            data = mutableListOf(also)
-        })
-    }
-
-    private fun goToAppHomePage() {
-        context?.run {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-    }
 }
 
 object JSActionManager {
     const val TAG = "JSActionManager"
-
-    /**
-     * 弱引用持有H5容器的上线文对象
-     */
-    private var locationContext: JSCallBack? = null
-
-    fun sendActionEvent(
-        eventName: String = "",
-        param: JSONObject? = null,
-        context: Context?,
-        jsCallBack: JSCallBack,
-        announce: Int,
-    ) {
-        if (param != null) {
-            var used = false
-            try {
-                used = when (eventName) {
-                    JSNotificationAction.jsshowGallery + DEFAULT_JS_SUFFIX -> {
-                        val json = param.getString("data")
-                        gotoMaxView(json)
-                        true
-                    }
-                    JSNotificationAction.jsShowToast + DEFAULT_JS_SUFFIX -> {
-                        val data: String = param.getString("data")
-                        showToast(context, data)
-                    }
-                    JSNotificationAction.jsSignature + DEFAULT_JS_SUFFIX -> {
-                        val data = param.getJSONObject("data")
-                        val questionId = data.getString("id")
-                        val status = data.getInteger("status")
-                        val groupId = data.getString("groupId")
-                        SJPXTestHelper.map[groupId] =
-                            SJPXTest(GsonUtils.mGson.toJson(data), status, questionId)
-                        true
-                    }
-                    JSNotificationAction.jscheckPermission + DEFAULT_JS_SUFFIX -> {
-                        val name = param.getString("name")
-                        checkDBXPermission(jsCallBack, name)
-                    }
-                    JSNotificationAction.jsAutolockScreen + DEFAULT_JS_SUFFIX -> {
-//                        TODO: 1/26/21 逻辑实现
-                        context.run {
-//                            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-//                            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-                        }
-                        true
-                    }
-                    JSNotificationAction.jspopTo + DEFAULT_JS_SUFFIX -> {
-                        context?.run {
-                            val tag = param.getString("data")
-                            jsCallBack.setPopToTag(tag)
-                        }
-                        true
-                    }
-                    JSNotificationAction.jsneedRefreshOnResume + DEFAULT_JS_SUFFIX -> {
-                        jsCallBack.setNeedRefreshOnResume()
-                        true
-                    }
-                    JSLoginBridgeActivity.jsSocialLogin + DEFAULT_JS_SUFFIX -> {
-                        if (context != null) {
-                            socialLogin(context, jsCallBack, param, announce)
-                        }
-                        true
-                    }
-                    JSNotificationAction.jsScan + DEFAULT_JS_SUFFIX -> {
-                        if (context != null) {
-                            HWQRCodeScannerActivity.invoke(context,jsCallBack,announce)
-                        }
-                        true
-                    }
-                    else -> {
-                        false
-                    }
-                }
-            } catch (e: Exception) {
-                e.printStackTrace()
-            } finally {
-            }
-            if (!used) {
-                if (actionsNeedBridgeToDo.contains(eventName)) {
-                    context?.run {
-                        startBridgeActivity(
-                            this,
-                            eventName,
-                            param.toJSONString(),
-                            jsCallBack,
-                            announce = announce
-                        )
-                    }
-                } else {
-                    jsCallBack.customEventCallBack(eventName, GsonUtils.mGson.toJson(param))
-                }
-            }
-        } else {
-            var used = when (eventName) {
-                JSNotificationAction.jsFetchUserInfo + DEFAULT_JS_SUFFIX -> {
-                    setUserInfo(jsCallBack)
-                }
-                else -> false
-            }
-            if (!used) {
-                if (actionsNeedBridgeToDo.contains(eventName)) {
-                    context?.let {
-                        startBridgeActivity(
-                            it,
-                            eventName,
-                            "",
-                            jsCallBack = jsCallBack,
-                            announce = announce
-                        )
-                    }
-                } else {
-                    jsCallBack.customEventCallBack(eventName, GsonUtils.mGson.toJson(param))
-                }
-            }
-        }
-    }
-
-    /**
-     * 一键登录
-     * @param context Context
-     * @param jsCallBack JSCallBack
-     * @param param JSONObject
-     * @param announce Int
-     */
-    private fun socialLogin(
-        context: Context, jsCallBack: JSCallBack, param: JSONObject, announce: Int
-    ) {
-        Logger.d(TAG, "start JSLoginBridgeActivity eventName:socialLogin data:$param")
-        context.let {
-            JSLoginBridgeActivity.invokeNew(
-                it,
-                jsCallBack,
-                param.toString(),
-                announce,
-            )
-        }
-    }
 
     private val actionsNeedBridgeToDo = listOf(
         JSBridgeActivity.jschoseImgWithUpload + DEFAULT_JS_SUFFIX,
         JSBridgeActivity.jsUpload + DEFAULT_JS_SUFFIX,
         JSBridgeActivity.jsChoseFile + DEFAULT_JS_SUFFIX,
     )
+
+    var jsNotificationHandlers: MutableList<JSNotificationHandler> = mutableListOf()
+
+    fun sendActionEvent(
+        context: Context,
+        eventName: String = "",
+        param: JSONObject,
+        jsCallBack: JSCallBack,
+        announce: Int,
+    ) {
+        var used = false
+        try {
+            used = when (eventName) {
+                JSNotificationAction.jsShowToast + DEFAULT_JS_SUFFIX -> {
+                    val data: String = param.getString("data")
+                    showToast(context, data)
+                }
+                JSNotificationAction.jspopTo + DEFAULT_JS_SUFFIX -> {
+                    context.run {
+                        val tag = param.getString("data")
+                        jsCallBack.setPopToTag(tag)
+                    }
+                    true
+                }
+                JSNotificationAction.jsneedRefreshOnResume + DEFAULT_JS_SUFFIX -> {
+                    jsCallBack.setNeedRefreshOnResume()
+                    true
+                }
+                else -> false
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        } finally {
+        }
+        if (!used) {
+            if (actionsNeedBridgeToDo.contains(eventName)) {
+                context.run {
+                    startBridgeActivity(
+                        this,
+                        eventName,
+                        param.toJSONString(),
+                        jsCallBack,
+                        announce = announce
+                    )
+                }
+            } else {
+                jsCallBack.customEventCallBack(eventName, GsonUtils.mGson.toJson(param))
+            }
+        }
+        jsNotificationHandlers.forEach {
+            if (it.notificationList.contains(eventName)) {
+                it.onNewNotification(context, eventName, param, announce, jsCallBack)
+            }
+        }
+    }
 
     private fun startBridgeActivity(
         context: Context,
@@ -434,56 +340,6 @@ object JSActionManager {
         }
         return true
     }
-
-
-    /**
-     * 写入用户信息
-     * @param jsCallBack JSCallBack
-     */
-    private fun setUserInfo(jsCallBack: JSCallBack): Boolean {
-        val mapOf = mapOf(
-            "userInfo" to YmyUserManager.user,
-            "token" to YmyUserManager.user.token
-        )
-        val parseObject = JSON.parseObject(JSON.toJSONString(mapOf))
-        jsCallBack.sendResult(JSNotificationAction.jsFetchUserInfo, parseObject, 0)
-        return true
-    }
-
-    /**
-     * 检查用户权限
-     * @param jsCallBack JSCallBack
-     * @param str String
-     * @return Boolean
-     */
-    private fun checkDBXPermission(jsCallBack: JSCallBack, str: String): Boolean {
-        if (StringUtils.isNotEmpty(str)) {
-            val split = str.split(",")
-            val mapOf = mutableMapOf<String, Boolean>()
-            if (split.isNotEmpty()) {
-                split.forEach {
-                    mapOf[it] = DBXPermission.checkHasDBXPermission(it.toLong())
-                }
-            }
-            val parseObject = JSON.parseObject(JSON.toJSONString(mapOf))
-            jsCallBack.sendResult(
-                JSNotificationAction.jscheckPermission,
-                parseObject,
-                0
-            )
-        }
-        return true
-    }
-
-    private fun gotoMaxView(json: String?) {
-        try {
-            val gson = Gson()
-            val maxBean = gson.fromJson(json, MaxBean::class.java)
-            MaxViewV2Activity.invoke(currentActivity!!, maxBean)
-        } catch (e: java.lang.Exception) {
-            e.printStackTrace()
-        }
-    }
 }
 
 
@@ -492,40 +348,4 @@ data class JSParams(
     val content: String = "",
     //成功还是失败 0失败，1成功
     val success: Int = 0,
-) : Serializable
-
-class JSLiveModel(
-    val eventName: String?,
-    val param: String?,
-) : LiveEvent
-
-data class LocationJSInfo(
-    val x: Double,
-    val y: Double,
-    val floorId: Int,
-    val distance: Double,
-    val direction: Float,
-    val type: String,
-    val pathConstraint: Boolean = true,
-)
-
-object SJPXTestHelper {
-    val map = mutableMapOf<String, SJPXTest>()
-
-    fun getSJPXTest(groupId: String): SJPXTest {
-        return map[groupId] ?: SJPXTest()
-    }
-}
-
-data class SJPXTest(
-    var data: String = "",
-    var status: Int = 0,
-    var id: String = "",
-) : Serializable
-
-data class ToWorkOrderData(
-    var eventId: Int = 0,
-    var title: String = "",
-    var eventList: MutableList<String> = mutableListOf(),
-    var toWorkOrderUrl: String = "",
 ) : Serializable

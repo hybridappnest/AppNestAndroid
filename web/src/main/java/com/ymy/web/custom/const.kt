@@ -49,26 +49,6 @@ object JSNotificationAction {
      */
     const val jsShowToast = "showToast"
 
-
-    /**
-     * 获取用户数据，收到和回写一致
-     */
-    const val jsFetchUserInfo = "fetchUserInfo"
-
-    /**
-     * 获取用户数据，收到和回写一致
-     */
-    const val jsSignature = "signature"
-
-    /**
-     * 获取用户权限
-     */
-    const val jscheckPermission = "checkPermission"
-
-    /**
-     * js操作页面自动锁屏
-     */
-    const val jsAutolockScreen = "autolockScreen"
     /**
      * js事件标记当前页面为返回时的目标页面（应用场景：当有一个页面需要打开多个webView后续页面，处理完成后回到目标页面时使用）
      */
@@ -87,5 +67,15 @@ object JSNotificationAction {
      * 扫码
      */
     const val jsScan = "scan"
+
+    /**
+     * 三方登录
+     */
+    const val jsSocialLogin = "socialLogin"
+
+    /**
+     * 三方登录
+     */
+    const val jsSocialLoginCB = jsSocialLogin + CALLBACK_SUFFIX
 
 }

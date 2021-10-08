@@ -10,12 +10,12 @@ import android.widget.SeekBar
 import android.widget.TextView
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.orhanobut.logger.Logger
-import com.tencent.qcloud.tim.uikit.R
+import com.ymy.appnest.R
 import com.ymy.appnest.ui.gallery.adapter.BaseGalleryItemProvider
 import com.ymy.appnest.ui.gallery.adapter.IGallerySourceModel
 import com.ymy.appnest.ui.gallery.bean.GalleryVideo
 import com.ymy.core.glide.ImageLoader
-import com.ymy.ijk.Utils
+import com.ymy.core.utils.StringUtils.stringForTime
 import com.ymy.player.video.videoview.AlivcVideoView
 
 /**
@@ -150,12 +150,12 @@ class ItemProviderVideo(
                     if (videoTotal == -1 && total != 0) {
                         skProgress.max = total
                         videoTotal = total
-                        val totalStr = Utils.stringForTime(total)
+                        val totalStr = stringForTime(total)
                         tvTimeTotal.text = totalStr
                     }
 //                Logger.e("setProgress position:${position}")
                     skProgress.progress = position
-                    val positionStr = Utils.stringForTime(position)
+                    val positionStr = stringForTime(position)
                     tvTimeCurrent.text = positionStr
                 }
 
@@ -254,9 +254,9 @@ class ItemProviderVideo(
                 ivThumb.visibility = View.VISIBLE
                 ivPlay_status.setImageResource(R.drawable.biz_video_play)
                 skProgress.progress = 0
-                val positionStr = Utils.stringForTime(0)
+                val positionStr = stringForTime(0)
                 tvTimeCurrent.text = positionStr
-                val totalStr = Utils.stringForTime(0)
+                val totalStr = stringForTime(0)
                 tvTimeTotal.text = totalStr
                 videoTotal = -1
             }

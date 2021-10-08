@@ -1,5 +1,3 @@
-import com.ymy.plugin.*
-
 plugins {
     // 这个 id 就是在 versionPlugin 文件夹下 build.gradle 文件内定义的 id
     id "com.ymy.plugin"
@@ -27,6 +25,7 @@ android {
         buildConfigField "String", "OSS_stsServer", "\"${PackageConfig.OSS_stsServer}\""
         buildConfigField "String", "OSS_endpoint", "\"${PackageConfig.OSS_endpoint}\""
         buildConfigField "String", "OSS_bucketName", "\"${PackageConfig.OSS_bucketName}\""
+
     }
 
     buildTypes {
@@ -35,9 +34,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
 }
 
 dependencies {
+
     api AndroidX.material
     api Kt.kotlin_stdlib
     api Kt.kotlin_coroutines_android
@@ -103,4 +109,7 @@ dependencies {
     api 'com.alivc.conan:AlivcConan:1.0.4'
     api 'com.tencent.liteav:LiteAVSDK_Professional:8.4.9947'
     implementation Third.waterMark
+
+    implementation Aliyun.arouterApi
+    kapt Aliyun.arouterComplier
 }
