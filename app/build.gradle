@@ -72,9 +72,9 @@ dependencies {
 
     implementation project(path: ':core')
     implementation project(path: ':imagepicker')
-    if (PackageConfig.needIM) {
+//    if (PackageConfig.needIM) {
         implementation project(path: ':tuikit')
-    }
+//    }
     implementation project(path: ':player')
     implementation project(path: ':camera')
     implementation project(path: ':push')
