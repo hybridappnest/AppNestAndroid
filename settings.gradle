@@ -7,6 +7,7 @@ include ':tuikit'
 include ':player'
 include ':camera'
 include ':push'
+include ':web'
 
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
@@ -22,4 +23,3 @@ dependencyResolutionManagement {
         google()
     }
 }
-include ':web'

@@ -125,6 +125,12 @@
             android:name="com.ymy.appnest.ui.setting.activity.SettingActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.ymy.appnest.web.JSLoginBridgeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Translucent" />
+
 
 
         <!--一键登录 start -->
