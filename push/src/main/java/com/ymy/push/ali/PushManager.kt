@@ -9,6 +9,7 @@ import com.jeremyliao.liveeventbus.LiveEventBus
 import com.orhanobut.logger.Logger
 import com.xiaomi.mipush.sdk.MiPushClient
 import com.ymy.core.Ktx
+import com.ymy.core.push.PushCenter
 import com.ymy.core.user.YmyUserManager
 import com.ymy.core.utils.BrandUtil
 import com.ymy.push.PushConts
@@ -41,6 +42,7 @@ object PushManager {
                 mPushTokenCallBack?.run {
                     this.getPushToken(keyword, token)
                 }
+                PushCenter.setPushToken(keyword,token)
             }
         }
         when {

@@ -6,6 +6,8 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
 import com.tencent.qcloud.tim.uikit.TUIKit
+import com.tencent.qcloud.tim.uikit.ThirdPushTokenMgr
+import com.ymy.core.push.PushCenter
 import com.ymy.im.helper.ConfigHelper
 import com.ymy.im.signature.GenerateTestUserSig
 
@@ -40,6 +42,12 @@ class IMManager : ContentProvider() {
         TUIKit.init(
             app, GenerateTestUserSig.SDKAPPID, ConfigHelper().getConfigs(app)
         )
+
+        PushCenter.addObserver(object : PushCenter.PushTokenObserver {
+            override fun pushToken(channel: String, token: String) {
+                ThirdPushTokenMgr.getInstance().thirdPushToken = token
+            }
+        })
     }
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? = null
