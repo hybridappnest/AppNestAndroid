@@ -67,7 +67,7 @@
 
 相关类HomeTabFragment,HomeBottomNavigationItem
 
-在app目录下的src/main/assest中存放了main.json文件
+在app目录下的src/main/assets中存放了main.json文件
 在无接口配置的情况下，会通过读取本地配置，初始化App,其中的type字段对应模块定义如下
 ```kotlin
 
