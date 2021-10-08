@@ -1,0 +1,7 @@
+import com.ymy.plugin.*
+
+configurations.maybeCreate("default")
+artifacts.add("default", file("crashshield-2.0.3-release.aar"))
+artifacts.add("default", file("logger-2.0.3-release.aar"))
+artifacts.add("default", file("main-2.0.3-release.aar"))
+artifacts.add("default", file("phoneNumber-L-AuthSDK-2.12.1.2.aar"))

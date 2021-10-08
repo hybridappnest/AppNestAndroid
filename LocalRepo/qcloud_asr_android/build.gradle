@@ -1,0 +1,4 @@
+import com.ymy.plugin.*
+
+configurations.maybeCreate("default")
+artifacts.add("default", file("qcloudasrsdk_2.1_release.aar"))

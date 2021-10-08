@@ -40,14 +40,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    repositories {
-        flatDir {
-            dirs 'libs','../tuikit/libs'
-        }
-        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public" }
-    }
-
     kapt {
         arguments {
             arg("AROUTER_MODULE_NAME", project.getName())
@@ -60,6 +52,7 @@ dependencies {
     api project(path: ':imagepicker')
     api project(path: ':player')
     api project(path: ':camera')
+    implementation project(path: ':LocalRepo:qcloud_asr_android')
     //indicator，头部指示器控件
     implementation Third.MagicIndicator
     implementation AndroidX.androidxlegacy
@@ -76,6 +69,5 @@ dependencies {
     kapt Aliyun.arouterComplier
 
     api 'com.tencent.imsdk:imsdk-plus:5.5.892'
-    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
 }
 
