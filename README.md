@@ -61,9 +61,39 @@
 * 基础交互弹窗，提示Toast
 * 登录基础页面(逻辑需要自行添加)
 
+##### 注意：本项目使用gradle-7.0.2，要求Gradle JDK为11以上
+
 ## 一、H5首页tab配置
 
 相关类HomeTabFragment,HomeBottomNavigationItem
+
+在app目录下的src/main/assest中存放了main.json文件
+在无接口配置的情况下，会通过读取本地配置，初始化App,其中的type字段对应模块定义如下
+```kotlin
+
+object HomeTabType {
+    /**
+     * 空行
+     */
+    const val empty = "empty"
+
+
+    /**
+     * web页面
+     */
+    const val web = "web"
+
+    /**
+     * 我的页面
+     */
+    const val mine = "mine"
+
+    /**
+     * IM
+     */
+    const val IM = "IM"
+}
+```
 
 ### 1、HomeTabFragment为首页展示的具体UI结构
 
@@ -112,7 +142,7 @@ WebViewFragment构造方法支持参数如下
 | pushData       | js调起新页面时的携带数据 |
 
 ```kotlin
-        fun newInstance(
+fun newInstance(
     url: String,
     title: String = "",
     showTitleBar: Boolean = true,
@@ -378,6 +408,21 @@ data class MineItemBean(
     val url: String = "",
 ) : Serializable
 ```
+
+## 五、IM功能组件化
+
+拆分IM功能到独立module中，使用单独的IMManager（ContentProvider）进行在App启动时的初始化工作
+
+具体配置，更新中。。。
+
+
+## 六、闪屏页替换
+
+要自定义闪屏页图片的，可以通过替换app module中的splash_default.webp文件实现，一张图片的不同尺寸，在对应尺寸的mipmap目录下
+
+如需要自定义闪屏页动画等功能，请自行修改SplashActivity
+
+
 ## 加入讨论群
 | 微信 | QQ |
 |-----------------------|:-----------------------|
