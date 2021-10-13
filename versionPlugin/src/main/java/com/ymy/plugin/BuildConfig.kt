@@ -14,7 +14,7 @@ object BuildConfig {
 object PackageConfig {
     const val applicationId = "com.ymy.appnest"
 
-    const val needIM = false
+    const val needIM = true
 
     /**
      * 阿里一键登录

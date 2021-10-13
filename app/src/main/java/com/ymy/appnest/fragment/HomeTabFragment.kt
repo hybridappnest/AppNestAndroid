@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.alibaba.android.arouter.launcher.ARouter
 import com.ymy.appnest.ConfigManager
 import com.ymy.appnest.R
 import com.ymy.appnest.adapter.BottomNavigationAdapter
@@ -15,6 +14,7 @@ import com.ymy.appnest.beans.HomeTabType
 import com.ymy.appnest.databinding.FragmentHomeBottomNavigationBinding
 import com.ymy.appnest.fragment.mine.TabMineV2Fragment
 import com.ymy.core.base.*
+import com.ymy.core.router.ARouterHelper
 import com.ymy.core.router.RoutersIM
 import com.ymy.web.custom.ui.WebViewFragment
 
@@ -41,10 +41,6 @@ class HomeTabFragment : BaseFragment(true), Refresher {
         TabMineV2Fragment()
     }
 
-    private val mIMFragment: RootFragment by lazy {
-        ARouter.getInstance().build(RoutersIM.IM_MsgTabFragment).navigation() as RootFragment
-    }
-
     private val mTabEmptyFragment: TabEmptyFragment by lazy {
         TabEmptyFragment.newInstance(
             "",
@@ -53,6 +49,10 @@ class HomeTabFragment : BaseFragment(true), Refresher {
             getColorCompat(R.color.white),
             false
         )
+    }
+
+    private val mIMFragment: RootFragment by lazy {
+        ARouterHelper.getFragmentByPathWithPlaceHolder(RoutersIM.IM_MsgTabFragment,mTabEmptyFragment) as RootFragment
     }
 
     private val mBottomNavigationAdapter by lazy {
@@ -95,7 +95,7 @@ class HomeTabFragment : BaseFragment(true), Refresher {
                         mTabEmptyFragment
                     }
                 }
-                fragment?.run {
+                fragment.run {
                     add(fragment)
                 }
             }

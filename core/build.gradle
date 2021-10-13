@@ -6,6 +6,7 @@ plugins {
     id "com.android.library"
     id "kotlin-android"
     id "kotlin-kapt"
+    id "android-aspectjx"
 }
 
 android {
@@ -45,6 +46,7 @@ android {
 }
 
 dependencies {
+    api 'org.aspectj:aspectjrt:1.9.6'
 
     api AndroidX.material
     api Kt.kotlin_stdlib
